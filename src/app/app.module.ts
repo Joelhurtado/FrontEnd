@@ -12,7 +12,6 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { HomeComponent } from './components/home/home.component';
-import { NoEspacios } from './components/directives/directives.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +19,7 @@ import { NoEspacios } from './components/directives/directives.component';
     LoginComponent,
     RegisterComponent,
     HomeComponent,
-    NoEspacios
+
   ],
   imports: [
     BrowserModule,
