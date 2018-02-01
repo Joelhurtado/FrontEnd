@@ -11,22 +11,38 @@
         type="text"
         class="form-control"
         placeholder="usuario"
-        required>
+        #userName="ngModel"
+        required >
+
       </div>
+      <div *ngIf="userName.invalid && (userName.dirty || userName.touched)"
+           class="alert alert-danger">
+           <div *ngIf="userName.errors?.required">
+             Campo Obligatorio
+           </div>
+           </div>
 
       <div class="form-group">
-        <label>contrasseña</label>
+        <label>contraseña</label>
         <input [(ngModel)]="usuario.password"
         name="password"
         type="password"
         class="form-control"
         placeholder="contraseña"
-        required>
+        #userPass="ngModel"
+        required >
+
       </div>
+      <div *ngIf="userPass.invalid && (userPass.dirty || userPass.touched)"
+           class="alert alert-danger">
+           <div *ngIf="userPass.errors?.required">
+             Campo Obligatorio
+           </div>
+           </div>
 
       <div class="form-group">
-        <button
-        type="submit" class="btn btn-outline-primary">
+        <button [disabled]="!forma.valid"
+        type="submit" class="btn btn-outline-primary" disabled="formnovalidate">
         Iniciar</button>
         <a  class="btn btn-link" [routerLink]="['/register']">Crear Cuenta</a>
       </div>
